@@ -1,0 +1,14 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Recipe {
+
+	private Dictionary<string, int> ingredients;
+	private Item result;
+
+	public Recipe (Dictionary<string, int> ingredients, Item result){
+		this.ingredients = ingredients;
+		this.result = result;
+	}
+}
