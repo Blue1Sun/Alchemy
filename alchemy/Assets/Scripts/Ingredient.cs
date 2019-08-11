@@ -6,21 +6,37 @@ using UnityEngine.UI;
 public class Ingredient {
 
 	private string name;
-	private Texture2D image = null;
+	private Sprite image = null;
 	private string amount; //200 грамм, 2 лапы и т.д.
 	private int severity; // 0 = ничего плохого, 10 = очень плохо
 
-	public Ingredient(string name, Texture2D image, string amount, int severity){
+	public Ingredient(string name, Sprite image, string amount, int severity){
 		this.name = name;
 		this.image = image;
 		this.amount = amount;
 		this.severity = severity;
 	}
 
-	public string Name{
-		get { return name; }
-		set { name = value; }
+	public Ingredient() {
+
 	}
+
+    public string Name
+    {
+
+        get { return name; }
+
+        set { name = value; }
+
+    }
+
+    public Sprite getImage() {
+    	    return image;
+    	}
+
+    	public void setImage(Sprite image) {
+    	    this.image = image;
+    	}
 
 	/*
 	void Start(){    

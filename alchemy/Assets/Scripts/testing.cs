@@ -16,6 +16,7 @@ public class testing : MonoBehaviour {
 		Item item2 = new Item ("shitty", 0);
 		Item item3 = new Item ("lovePotion", 111);
 
+
 		Dictionary<string, int> dict1 = new Dictionary<string, int>();
 		dict1.Add (ingr1.Name, 1);
 		dict1.Add (ingr3.Name, 2);
