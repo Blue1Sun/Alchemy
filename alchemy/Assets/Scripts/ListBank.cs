@@ -19,9 +19,9 @@ public abstract class BaseListBank: MonoBehaviour
 public class ListBank : BaseListBank
 {
 
-    /*private int[] texts = {
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-    };*/
+    private string[] texts = {
+        "meat", "unicorn horn", "salt", "nymph tear", "dragon egg", "wolf fang", "cristal", "spider leg", "dragon scale"
+    };
 
 	private List<Ingredient> ingredients;
 
@@ -31,7 +31,7 @@ public class ListBank : BaseListBank
                for(int i = 0; i < sprites.Length; i++)
                {
                       Ingredient ingredient = new Ingredient();
-                      ingredient.Name = i.ToString();
+                      ingredient.Name = texts[i];
                       ingredient.setImage(sprites[i]);
                       ingredients.Add(ingredient);
                }

@@ -11,4 +11,14 @@ public class Item {
 		this.name = name;
 		this.impact = impact;
 	}
+
+    public Item()
+    {
+    }
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
 }

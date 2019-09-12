@@ -339,11 +339,13 @@ public class ListBox : MonoBehaviour
 
     public void onClick()
     {
+        if (GameObject.Find("CurrentIngredient") != null)
+            Destroy(GameObject.Find("CurrentIngredient"));
         Sprite image = this.transform.Find("Image").GetComponent<Image>().sprite;
         GameObject curIngr = Instantiate(ingrImage, this.transform.position, Quaternion.identity, GameObject.Find("Canvas").GetComponent<Transform>()) as GameObject;
         curIngr.GetComponent<Image>().sprite = image;
         curIngr.name = "CurrentIngredient";
-        curIngr.GetComponent<IngrMoving>().curIngr = new Ingredient("name", image, "amount", 999);
+        curIngr.GetComponent<IngrMoving>().curIngr = new Ingredient(GetComponentInChildren<Text>().text, image, "amount", 0);
 
     }
 }

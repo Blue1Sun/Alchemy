@@ -10,6 +10,7 @@ public class IngrMoving : MonoBehaviour
     private Vector3 startPos;
     private Vector3 screenPoint;
     private Vector3 offset;
+    private bool dragging = false;
 
     private Vector3 targetPos = new Vector3(1100, 550, 0);
 
@@ -19,22 +20,34 @@ public class IngrMoving : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         Vector3 ingrPos = this.transform.position;
 
+
         if (mousePos.x > (ingrPos.x - 40) && mousePos.x < (ingrPos.x + 40) && mousePos.y > (ingrPos.y - 40) && mousePos.y < (ingrPos.y + 40))
         {
-            if (Input.GetKey(KeyCode.Mouse0)){
-                this.transform.position = new Vector3(mousePos.x, mousePos.y, 0.0f);
-            }
-            else if (Input.GetKeyUp(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+                dragging = true;            
+        }
+        if (Input.GetKey(KeyCode.Mouse0) && dragging)
+        {
+            this.transform.position = new Vector3(mousePos.x, mousePos.y, 0.0f);
+
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse0) && dragging)
+        {
+            if (ingrPos.x > (targetPos.x - 150) && ingrPos.x < (targetPos.x + 150) && ingrPos.y > (targetPos.y - 100) && ingrPos.y < (targetPos.y + 200)) //TO DO: относительно метки
             {
-                if (ingrPos.x > (targetPos.x - 150) && ingrPos.x < (targetPos.x + 150) && ingrPos.y > (targetPos.y - 100) && ingrPos.y < (targetPos.y + 200)) //TO DO: относительно метки
+                //send ingr info to function
+                GameObject puff = GameObject.Find("Puff");
+                puff.GetComponent<ParticleSystem>().Play();
+
+                int value;
+                if (!FindObjectOfType<CheckPotion>().curRecipe.TryGetValue(curIngr.Name, out value))
+                    FindObjectOfType<CheckPotion>().curRecipe.Add(curIngr.Name, 1);
+                else
                 {
-                    //send ingr info to function
-                    // EFFECT YAAAY Instantiate
-                    Debug.Log("Sended");
+                    FindObjectOfType<CheckPotion>().curRecipe[curIngr.Name] = ++value;
                 }
-                Debug.Log(ingrPos + "     " + targetPos);
-                Destroy(this.gameObject);
             }
+            Destroy(this.gameObject);
         }
     }
 
