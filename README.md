@@ -7,8 +7,8 @@ Alchemy is also easy to biult in any enviroment (from steampunk to fairy tale) a
 (see demo and inviroment prototypes)
 
 ## Developers
-[Blue1Sun](https://github.com/Blue1Sun) 
-[MariaPushkin](https://github.com/MariaPushkin) 
+[Blue1Sun](https://github.com/Blue1Sun), 
+[MariaPushkin](https://github.com/MariaPushkin), 
 [moiraxavier](https://github.com/moiraxavier)
 
 ## Demo
