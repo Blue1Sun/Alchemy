@@ -15,6 +15,6 @@ Alchemy is also easy to biult in any enviroment (from steampunk to fairy tale) a
 ![](alchemy.gif)
 
 ## Inviroment prototypes 
-]()                   | 
-----------------------|----------------------
-![](enviroment-1.png) | ![](enviroment-2.png)
+| Place for phone          |  Eviroment               |
+:-------------------------:|:-------------------------:
+![](enviroment-1.png)      | ![](enviroment-2.png)
